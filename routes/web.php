@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+$router->get('/', array('as' => 'home-page', 'uses' => 'IndexController@index'));
+$router->post('/', array('as' => 'home-page-with-appointments', 'uses' => 'IndexController@getAppointments'), 'IndexController@getAppointments');
